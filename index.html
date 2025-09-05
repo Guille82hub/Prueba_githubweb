@@ -1,26 +1,196 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BAJO MONTE - Yerba Mate Natural y Agroecológica</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="favicon.ico" />
+  <style>
+    /* Reset básico */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background-color: #f4f9f4;
+      color: #2e3d26;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Sello de agua muy sutil y no interferente */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 350px;
+      height: 350px;
+      background-image: url('Prueba_githubweb/Ponchada_yerba.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      opacity: 0.04; /* muy baja opacidad */
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: -1;
+      filter: grayscale(80%) brightness(150%);
+    }
+
+    header {
+      background-color: #4a7c0f;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      color: #e6f0d4;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: #d4e9a7;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f0f9e8;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1; /* para estar sobre el sello */
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(74,124,15,0.3);
+      margin-bottom: 2.5rem;
+      object-fit: cover;
+      image-rendering: crisp-edges; /* para mejorar nitidez */
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      color: #4a7c0f;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    p.lead {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      color: #3c4f1a;
+      text-shadow: 0 0 1px rgba(255,255,255,0.7); /* mejora contraste */
+    }
+
+    .btn-primary {
+      background-color: #6fa30f;
+      color: #f4f9f4;
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(111,163,15,0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .btn-primary:hover {
+      background-color: #82bd17;
+      box-shadow: 0 8px 18px rgba(130,189,23,0.7);
+    }
+
+    footer {
+      background-color: #4a7c0f;
+      color: #d4e9a7;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      margin-top: auto;
+      user-select: none;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+      .hero-image {
+        max-width: 90vw;
+      }
+      .btn-primary {
+        width: 100%;
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>BAJO MONTE</h1>
+    <nav>
+      <a href="#producto">Producto</a>
+      <a href="#sustentabilidad">Sustentabilidad</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
 
   <main>
-    <section class="intro">
-      <h2>Yerba Mate Natural y Agroecológica</h2>
+    <img class="hero-image" src="Prueba_githubweb/Ponchada_yerba.jpg" alt="Yerba mate natural Bajo Monte" />
+
+    <h2 id="producto">Yerba Mate Natural y Agroecológica</h2>
+    <p class="lead">
+      BAJO MONTE es una yerba mate cultivada bajo el sombreo natural del monte, sin agroquímicos,
+      promoviendo la regeneración del suelo y el respeto por la biodiversidad. Un producto 100% artesanal, para quienes valoran lo auténtico y sustentable.
+    </p>
+
+    <button class="btn-primary" onclick="alert('Gracias por tu interés en BAJO MONTE!')">
+      Conocé más
+    </button>
+
+    <section id="sustentabilidad" style="margin-top: 4rem; max-width: 700px; text-align: left;">
+      <h3 style="color:#4a7c0f; margin-bottom: 0.8rem; font-weight: 700;">Compromiso con la sustentabilidad</h3>
       <p>
-        BAJO MONTE es una yerba mate cultivada bajo el sombreo natural del monte, sin agroquímicos,
-        promoviendo la regeneración del suelo y el respeto por la biodiversidad.
+        Nuestro cultivo fomenta la reforestación y protege las fuentes hídricas. Trabajamos con la comunidad local para garantizar un impacto positivo y un producto final de alta calidad.
       </p>
-      <button class="btn-primary">Conocé más</button>
+    </section>
+
+    <section id="contacto" style="margin-top: 4rem; max-width: 700px; text-align: left;">
+      <h3 style="color:#4a7c0f; margin-bottom: 0.8rem; font-weight: 700;">Contacto</h3>
+      <p>Para consultas o pedidos, escribinos a <a href="mailto:info@bajomonte.com" style="color:#6fa30f; text-decoration:none;">info@bajomonte.com</a></p>
     </section>
   </main>
 
@@ -29,5 +199,4 @@
   </footer>
 </body>
 </html>
-
 
