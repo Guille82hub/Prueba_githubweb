@@ -1,0 +1,81 @@
+/* Fondo sello de agua */
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+  background-color: #f9f9f4;
+  color: #2e3d26;
+
+  /* Sello de agua */
+  background-image: url('Prueba_githubweb/Ponchada_yerba.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 300px 300px; /* tamaño del sello */
+  background-attachment: fixed;
+  opacity: 0.1; /* No funciona en body, se usará filtro en pseudo elemento */
+  position: relative;
+}
+
+/* Para aplicar transparencia al sello sin afectar texto */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('Prueba_githubweb/Ponchada_yerba.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 300px 300px;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: -1;
+}
+
+header {
+  background-color: #6a8a0f; /* color diferente para encabezado */
+  padding: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  color: #f9f9f4;
+  text-align: center;
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 1rem auto;
+  text-align: justify;
+}
+
+/* Imagen principal más pequeña */
+.image-container.main-image img {
+  max-width: 50%; /* tamaño reducido */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: block;
+  margin: 0 auto;
+}
+
+/* Contenedor para las dos imágenes nuevas */
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 2rem auto 0 auto;
+  gap: 1rem;
+}
+
+.image-row img {
+  width: 49%; /* para que ambas ocupen el ancho completo con espacio entre ellas */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  object-fit: cover;
+}
