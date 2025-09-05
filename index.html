@@ -27,24 +27,25 @@
       overflow-x: hidden;
     }
 
-    /* Sello de agua muy sutil y no interferente */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 350px;
-      height: 350px;
-      background-image:url('Ponchada_yerba.jpg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-      opacity: 0.04; /* muy baja opacidad */
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      z-index: -1;
-      filter: grayscale(80%) brightness(150%);
-    }
+   /* Sello de agua visible, ocupa todo el fondo y queda estático */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;      /* ancho completo de la ventana */
+  height: 100vh;     /* alto completo de la ventana */
+  background-image: url('Ponchada_yerba.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;  /* cubre todo el fondo */
+  opacity: 0.15;       /* aumenta la opacidad para mayor visibilidad */
+  pointer-events: none;
+  z-index: -1;
+  filter: grayscale(80%) brightness(150%);
+  transform: none;     /* quita el translate para que no se desplace */
+}
+
 
     header {
       background-color: #4a7c0f;
