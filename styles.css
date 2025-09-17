@@ -17,7 +17,7 @@ body::before {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 70% 100%;  /* 25% mas grande q el contenedor del fondo */
-  opacity: 0.15;       /* aumenta la opacidad para mayor visibilidad */
+  opacity: 0.25;       /* aumenta la opacidad para mayor visibilidad */
   pointer-events: none;
   z-index: -1;
   filter: grayscale(80%) brightness(120%);
@@ -66,10 +66,6 @@ header h1 img {
   transform: scale(2.5);
   transform-origin: left center; /* para que crezca hacia la derecha y no hacia arriba */
 }
-
-
-
-
 
 
 nav a {
